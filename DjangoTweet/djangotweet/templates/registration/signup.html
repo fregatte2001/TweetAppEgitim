@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{%block content%}
+       
+        <form method="POST" action="">
+            <div class="container" style="border: 3px solid cornflowerblue; padding: 10px; width: 50%;">
+
+                {%csrf_token%}
+                    {%for field in form%}
+                        <div class="mb-3">
+                            {{field.label_tag}}
+                            {{field}}
+                        </div>
+                    {%endfor%}
+                <button type="submit" class="btn btn-primary" value="signup">Kayıt Ol</button>
+            </div>
+        </form>
+        
+{%endblock%}
